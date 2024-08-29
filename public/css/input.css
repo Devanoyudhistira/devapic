@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .spancategory{
+        @apply italic font-bold  font-caveat uppercase
+    }
+    .navbar{
+        @apply block w-6 h-[3px] bg-black flex-grow
+    }
+
+    .imagelist{
+        @apply object-center
+    }
+    .authorname{
+        @apply text-lg font-poppins font-normal 
+    }
+
+    .figuretags{
+        @apply w-48 h-[138px] relative after:absolute overflow-hidden after:text-center after:justify-center after:flex after:items-center after:top-0 after:left-4 after:w-full after:h-[100%]  after:bg-slate-900/30 
+    }
+}
+
+#filter{
+    scrollbar-width: thin ;
+}

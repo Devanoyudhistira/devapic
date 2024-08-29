@@ -1,0 +1,9 @@
+{
+	"dependencies": {
+		"tailwindcss": "^3.4.7"
+	},
+	"scripts": {
+		"dev":"pnpm tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
+		"build":"pnpm tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify"
+	}
+}
