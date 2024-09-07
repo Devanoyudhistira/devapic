@@ -861,12 +861,12 @@ video {
   width: 220px;
 }
 
-.w-\[70vh\] {
-  width: 70vh;
-}
-
 .w-\[75vw\] {
   width: 75vw;
+}
+
+.w-\[80vw\] {
+  width: 80vw;
 }
 
 .w-\[85vw\] {
@@ -892,18 +892,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[50vh\] {
-  width: 50vh;
-}
-
-.w-\[70vw\] {
-  width: 70vw;
-}
-
-.w-\[80vw\] {
-  width: 80vw;
 }
 
 .max-w-40 {

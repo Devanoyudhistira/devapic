@@ -5,46 +5,28 @@ class home extends controller
     public function signin()
     {
         $data["judul"] = "signin";
+        if(isset($_POST["register"])){
+            $this->model("usermodel")->adduser($_POST);
+        }
         $this->views("template/upper", $data);
-        $this->views("SignIn");
+        $this->views("SignIn");    
     }
     public function login()
     {
         $data["judul"] = "login";
+        if(isset($_POST["loginbutton"])){
+            $this->logincheck();
+         }
         $this->views("template/upper", $data);
         $_SESSION["login"] = false;
         $_SESSION["validation"] = isset($_SESSION["identitas"]) ? "username/password salah" : "";
         $this->views("login");
         $this->views("template/down", $data);
     }
-    public function imagehandler($location)
-    {
-        $gambar = $_FILES["profile"]["name"];
-        $lokasigambar = $_FILES["profile"]["tmp_name"];
-        $eksistensifile = ['jpg', 'png', 'jpeg'];
-        $eksistensigambar = explode('.', $gambar);
-        $eksistensigambar = strtolower(end($eksistensigambar));
-        $namafilerandom = uniqid();
-        $namafilerandom .= '.';
-        $namafilerandom .= $eksistensigambar;
-        if(!in_array($eksistensigambar,$eksistensifile)){
-            return null;
-        }
-
-        move_uploaded_file($lokasigambar, "public/image/userprofile/$location/" . $namafilerandom);
-        return $namafilerandom;
-    }
-    public function register()
-    {
-        $imageprofile = $this->imagehandler("profile");
-        $imagecover = $this->imagehandler("cover");
-        $this->model("usermodel")->adduser($_POST, $imageprofile,$imagecover);
-    }
 
 
     public function logincheck()
     {
-        session_start();
         if ($this->model("usermodel")->checkuser($_POST)) {
             $datauser = $this->model("usermodel")->checkuser($_POST);
             $password = $datauser["password"];

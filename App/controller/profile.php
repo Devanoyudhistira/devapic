@@ -86,18 +86,16 @@ class Profile extends controller
         $this->model("imagemodel")->deleteimage($id, $target);
         header("location:" . MAINURL . "profile/" . $target);
     }
-    public function changeprofile($target)
+    public function changeprofile($target,$formname,$pathname,$tablename)
     {
-        $image = $this->profilehandler("changeprofile","profile");
-        $this->model("imagemodel")->updateimage("UPDATE user SET profilephoto = '$image' WHERE id = '$target' ");
-        echo "$image " . $target;
+        $image = $this->profilehandler($formname,$pathname );
+        $this->model("imagemodel")->updateimage("UPDATE user SET $tablename = '$image' WHERE id = '$target' ");
         header("location:" . MAINURL . "profile/" . $target);
     }
     public function changecover($target)
     {
         $image = $this->profilehandler("changecover","cover");
         $this->model("imagemodel")->updateimage("UPDATE user SET coverphoto = '$image' WHERE id = '$target' ");
-        echo "$image " . $target;
         header("location:" . MAINURL . "profile/" . $target);
     }
 

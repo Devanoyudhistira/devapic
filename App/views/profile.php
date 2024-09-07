@@ -36,7 +36,7 @@
                 expected
             </p>
 
-            <form action="<?= MAINURL ?>profile/changeprofile/<?= $data['id'] ?>" method="post" id="changeprofile" enctype="multipart/form-data" class="hidden mt-3 flex-col gap-2 items-center">
+            <form action="<?= MAINURL ?>profile/changeprofile/<?= $data['id'] ?>/changeprofile/profile/profilephoto" method="post" id="changeprofile" enctype="multipart/form-data" class="hidden mt-3 flex-col gap-2 items-center">
                 <label for="">
                     <h1 class="text-green-400 font-bold text-2xl font-inter tracking-wider">edit profile photo</h1>
                     <input type="file" name="changeprofile" class="font-inter font-semibold text-md mt-2" id="">
@@ -44,7 +44,7 @@
                 <button type="submit" class="block bg-slate-100 shadow-[1px_1px_5px_theme(colors.green.400)] border-2 border-green-400 px-5 py-2" > change </button>
             </form>
 
-            <form action="<?= MAINURL ?>profile/changecover/<?= $data['id'] ?>" method="post" id="changecover" enctype="multipart/form-data" class="hidden mt-3 flex-col gap-2 items-center">
+            <form action="<?= MAINURL ?>profile/changeprofile/<?= $data['id'] ?>/changecover/cover/coverphoto" method="post" id="changecover" enctype="multipart/form-data" class="hidden mt-3 flex-col gap-2 items-center">
                 <label for="" class="block">
                     <h1 class="text-green-400 font-bold text-2xl font-inter tracking-wider">edit cover photo</h1>
                     <input type="file" name="changecover" class="font-inter font-semibold text-md mt-2 " id="">

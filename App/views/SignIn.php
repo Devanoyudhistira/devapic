@@ -1,5 +1,5 @@
 <body class="flex h-[100vh] flex-col justify-center items-center">
-    <form action="<?= MAINURL . "home/register" ?> " method="post" class="flex justify-center flex-col"
+    <form action="" method="post" class="flex justify-center flex-col"
         enctype="multipart/form-data">
         <h1 class="font-semibold font-inter text-xl text-center">sign in</h1>
         <label for="username" class="font-inter text-md">

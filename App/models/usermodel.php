@@ -7,15 +7,15 @@ class usermodel extends databases
         $this->db = new databases;
     }
 
-    public function adduser($data, $photoprofile, $photocover)
+    public function adduser($data)
     {
         if (isset($_POST['register']) && strlen($_POST['username']) > 1 && strlen($_POST['password'] > 1) ){
             $query = "INSERT INTO user VALUES(:userid,:name,:password,:profilephoto,:coverphoto)";
             $this->db->query($query);
             $this->db->bind("userid", 0);
             $this->db->bind("name", htmlspecialchars($data["username"]));
-            $this->db->bind("profilephoto", $photoprofile);
-            $this->db->bind("coverphoto", $photocover);
+            $this->db->bind("profilephoto", null);
+            $this->db->bind("coverphoto", null);
             $this->db->bind("password", password_hash($data["password"], PASSWORD_BCRYPT));
             $this->db->execute();
             header("location:" . MAINURL . "home/login");
